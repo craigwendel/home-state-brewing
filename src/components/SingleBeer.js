@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Chip } from '@material-ui/core';
+import { Typography, Chip, Avatar } from '@material-ui/core';
 import { beers } from '../data/beers';
+import orange from '../images/orange-avatar.png';
 
 const useStyles = makeStyles({
   container: {
@@ -48,12 +49,15 @@ export default function SingleBeer({ value }) {
         <div className={classes.type}>
           <Chip
             className={classes.chip}
-            color="secondary"
+            avatar={<Avatar alt="orange hop" src={orange} />}
+            color="primary"
+            variant="outlined"
             label={`ABV: ${beers[value].abv}`}
           />
           <Chip
             className={classes.chip}
-            color="secondary"
+            avatar={<Avatar alt="orange hop" src={orange} />}
+            color="primary"
             label={`IBU: ${beers[value].ibu}`}
           />
         </div>

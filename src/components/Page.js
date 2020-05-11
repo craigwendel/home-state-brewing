@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
+import AppHeader from './AppHeader';
 import Footer from './Footer';
 
 export default function Page(props) {
   return (
     <>
-      <Header />
+      <AppHeader />
       {props.children}
       <Footer />
     </>

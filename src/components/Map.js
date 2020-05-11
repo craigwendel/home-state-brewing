@@ -5,6 +5,7 @@ import { Paper, Typography } from '@material-ui/core';
 const useStyles = makeStyles({
   map: {
     position: 'relative',
+    padding: '3rem 0rem',
   },
   paper: {
     position: 'absolute',
@@ -24,7 +25,7 @@ export default function Map() {
   return (
     <div className={classes.map}>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224444.7049463101!2d-81.50892389085922!3d28.481097119027638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1589082550296!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.1793811207294!2d-81.62802758495236!3d28.474143997982775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI4JzI2LjkiTiA4McKwMzcnMzMuMCJX!5e0!3m2!1sen!2sus!4v1589165328518!5m2!1sen!2sus"
         width="100%"
         height="450"
         frameBorder="0"
@@ -36,7 +37,7 @@ export default function Map() {
       ></iframe>
       <Paper elevation={3} className={classes.paper}>
         <Typography align="center" color="primary" variant="h5">
-          Visit Us
+          Visit Us!
         </Typography>
         <Typography className={classes.type}>
           We're locacted on the corner of casa and domum

@@ -53,6 +53,9 @@ const useStyles = makeStyles({
   social: {
     margin: '0.25rem',
   },
+  newsletter: {
+    color: '#fff',
+  },
 });
 
 export default function Footer() {
@@ -64,15 +67,15 @@ export default function Footer() {
       </div>
       <div className={classes.emailSocial}>
         <div className={classes.headline}>
-          <Typography color="secondary">Sign Up for our Newsletter</Typography>
+          <Typography classes={classes.newsletter}>
+            Sign Up below to join the HSB Family!
+          </Typography>
         </div>
         <div className={classes.email}>
           <TextField
             classes={{ root: classes.input }}
             id="email-signup"
             type="email"
-            InputLabelProps={{ shrink: true }}
-            label="Email"
             variant="outlined"
             color="secondary"
             size="small"

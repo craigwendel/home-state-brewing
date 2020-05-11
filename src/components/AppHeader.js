@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Link } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -49,18 +49,20 @@ function ScrollTop(props) {
   );
 }
 
-export default function Header(props) {
+export default function AppHeader(props) {
   const classes = useStyles();
   return (
     <>
       <AppBar color="default">
         <Toolbar>
+          {/* <Link component={RouterLink} to="/"> */}
           <img
             className={classes.logo}
             src={logo}
             alt="home state brewing logo"
           />
-          <Links direction="row" />
+          {/* </Link> */}
+          <Links direction="row" header />
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

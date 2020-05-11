@@ -6,7 +6,7 @@ import OurBeersTabs from './OurBeersTabs';
 
 const useStyles = makeStyles({
   container: {
-    margin: '3rem 0rem',
+    padding: '3rem 0rem',
   },
   title: {
     display: 'flex',
