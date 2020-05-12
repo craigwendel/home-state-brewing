@@ -33,7 +33,7 @@ export default function About() {
         Our Story
       </Typography>
       <div className={classes.imageText}>
-        <img className={classes.image} src={stackedLogo} />
+        <img className={classes.image} src={stackedLogo} alt="" />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
           iusto consectetur, alias voluptate dolorem similique dignissimos eaque

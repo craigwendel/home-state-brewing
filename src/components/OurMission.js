@@ -38,7 +38,7 @@ export default function OurMission() {
       </Typography>
       <div className={classes.mission}>
         <div className={classes.card}>
-          <img className={classes.image} src={brewer} />
+          <img className={classes.image} src={brewer} alt="" />
           <Typography variant="h4" color="primary">
             Brew the Greatest Beer
           </Typography>
@@ -50,7 +50,7 @@ export default function OurMission() {
           </Typography>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src={cheers} />
+          <img className={classes.image} src={cheers} alt="" />
           <Typography variant="h4" color="primary">
             Craft the Community
           </Typography>
@@ -62,7 +62,7 @@ export default function OurMission() {
           </Typography>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src={fun} />
+          <img className={classes.image} src={fun} alt="" />
           <Typography variant="h4" color="primary">
             Have Fun in the Process
           </Typography>

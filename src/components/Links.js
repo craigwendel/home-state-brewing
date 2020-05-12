@@ -20,19 +20,35 @@ export default function Links(props) {
   const classes = useStyles(props);
   return (
     <div className={classes.container}>
-      <Link className={classes.link} component={RouterLink} to="/our-beers">
+      <Link
+        className={classes.link}
+        component={RouterLink}
+        to="/XaeA-12/our-beers"
+      >
         Our Beers
       </Link>
-      <Link className={classes.link} component={RouterLink} to="/mission">
+      <Link
+        className={classes.link}
+        component={RouterLink}
+        to="/XaeA-12/mission"
+      >
         Mission
       </Link>
-      <Link className={classes.link} component={RouterLink} to="/community">
+      <Link
+        className={classes.link}
+        component={RouterLink}
+        to="/XaeA-12/community"
+      >
         Community
       </Link>
-      <Link className={classes.link} component={RouterLink} to="/about">
+      <Link className={classes.link} component={RouterLink} to="/XaeA-12/about">
         About
       </Link>
-      <Link className={classes.link} component={RouterLink} to="/contact">
+      <Link
+        className={classes.link}
+        component={RouterLink}
+        to="/XaeA-12/contact"
+      >
         Contact
       </Link>
     </div>

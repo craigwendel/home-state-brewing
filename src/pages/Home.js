@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import Page from '../components/Page';
+import Hero from '../components/Hero';
 import OurMission from '../components/OurMission';
 import OurBeers from '../components/OurBeers';
 import Map from '../components/Map';
@@ -18,6 +19,7 @@ export default function Home() {
   const classes = useStyles();
   return (
     <Page>
+      <Hero />
       <OurMission />
       <Divider className={classes.divider} />
       <OurBeers />
