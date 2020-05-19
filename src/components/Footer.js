@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#16334B',
     [theme.breakpoints.down('xs')]: {
       gridTemplateColumns: '100px 1fr',
-      alignItems: 'flex-start',
       gridGap: '0rem',
     },
   },

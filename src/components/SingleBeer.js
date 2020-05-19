@@ -8,8 +8,9 @@ import orange from '../images/orange-avatar.png';
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
+      alignItems: 'center',
     },
   },
   image: {
@@ -27,11 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SingleBeer(props) {
-  console.log('props', props);
-  console.log('beer', props.match.params.beer);
-  const { value } = props;
-
+export default function SingleBeer({ value }) {
   const classes = useStyles();
   return (
     <div className={classes.container} role="tabpanel">

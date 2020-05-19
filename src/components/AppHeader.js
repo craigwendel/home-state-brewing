@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, Link } from 'react-router-dom';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Toolbar,
   IconButton,
@@ -91,9 +91,6 @@ function ScrollTop(props) {
 export default function AppHeader(props) {
   const classes = useStyles();
   const history = useHistory();
-  const theme = useTheme();
-  console.log('theme', theme);
-
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenuClick = event => {

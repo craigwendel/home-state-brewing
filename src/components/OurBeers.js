@@ -28,7 +28,11 @@ export default function OurBeers() {
         <Typography variant="h2" color="primary" align="center">
           Our Beers
         </Typography>
-        <Link className={classes.link} component={RouterLink} to="/our-beers">
+        <Link
+          className={classes.link}
+          component={RouterLink}
+          to="/XaeA-12/our-beers"
+        >
           View All
         </Link>
       </div>
