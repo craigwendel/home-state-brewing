@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Paper } from '@material-ui/core';
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
 export default function AgeVerification() {
   const history = useHistory();
   const classes = useStyles();
-  const [date, setDate] = useState({ month: 'Jan', day: '1', year: '2020' });
+  // const [date, setDate] = useState({ month: 'Jan', day: '1', year: '2020' });
 
   // const handleChange = event => {
   //   const { name, value } = event.target;

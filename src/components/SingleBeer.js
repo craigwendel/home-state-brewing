@@ -27,7 +27,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SingleBeer({ value }) {
+export default function SingleBeer(props) {
+  console.log('props', props);
+  console.log('beer', props.match.params.beer);
+  const { value } = props;
+
   const classes = useStyles();
   return (
     <div className={classes.container} role="tabpanel">

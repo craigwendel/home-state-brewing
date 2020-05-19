@@ -15,6 +15,7 @@ export const beers = [
       'Hat Trick IPA - Gulf Coast IPA with tropical notes of grapefruit, pineapple, mango and melon. Easy drinking, quite refreshing, quenches your throat kind of IPA!',
     abv: '7.2%',
     ibu: 70,
+    slug: 'hat-trick',
   },
   {
     id: 'hoptopuss',
@@ -27,6 +28,7 @@ export const beers = [
       'A vienna pale. Malts - vienna, malted oats, malted wheat, carapils & golden naked oats.',
     abv: '5.6%',
     ibu: 10,
+    slug: 'hoptopuss',
   },
   {
     id: 'buckleBunny',
@@ -39,6 +41,7 @@ export const beers = [
       'This little Cream Ale is pretty much for everyone. Great for a hot summer’s day or a hot winter’s night. Light, refreshing and crisp.',
     abv: '4.5%',
     ibu: 15,
+    slug: 'buckle-bunny',
   },
   {
     id: 'glorioso',
@@ -50,5 +53,6 @@ export const beers = [
     description: 'CRISP ∙ REFRESHING ∙ DRY ∙ FLORAL',
     abv: '5.5%',
     ibu: 29,
+    slug: 'glorioso',
   },
 ];
