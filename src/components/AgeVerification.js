@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  Button,
-  MenuItem,
-  Typography,
-  Paper,
-} from '@material-ui/core';
+import { Button, Typography, Paper } from '@material-ui/core';
 import cheers from '../images/sunlight-cheers.jpg';
 import stackedLogo from '../images/HSB-Stacked.png';
-import { dates } from '../data/dates';
+// import { dates } from '../data/dates';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -41,30 +33,28 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 100,
   },
   logo: {
-    width: 400,
+    width: 300,
   },
 }));
 
 export default function AgeVerification() {
-  let history = useHistory();
+  const history = useHistory();
   const classes = useStyles();
   const [date, setDate] = useState({ month: 'Jan', day: '1', year: '2020' });
 
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setDate({ ...date, [name]: value });
-  };
+  // const handleChange = event => {
+  //   const { name, value } = event.target;
+  //   setDate({ ...date, [name]: value });
+  // };
 
-  const submitDate = () => {
-    const twentyOne = 31536000000 * 21;
-    const birthDate = `${date.day} ${date.month} ${date.year}`;
-    console.log({ birthDate });
-
-    const age = Date.parse(birthDate);
-    if (Date.now() - age > twentyOne) {
+  const submitAge = age => {
+    // const twentyOne = 31536000000 * 21;
+    // const birthDate = `${date.day} ${date.month} ${date.year}`;
+    // const age = Date.parse(birthDate);
+    if (age) {
       history.push('/XaeA-12');
     } else {
       window.open(
@@ -83,10 +73,10 @@ export default function AgeVerification() {
           alt="Home State Brewery logo"
         />
         <Typography className={classes.headline} variant="h3" color="primary">
-          Enter Your Birth Date
+          Over 21?
         </Typography>
         <div className={classes.form}>
-          <FormControl className={classes.formControl}>
+          {/* <FormControl className={classes.formControl}>
             <InputLabel>Month</InputLabel>
             <Select name="month" value={date.month} onChange={handleChange}>
               {dates.months.map((m, i) => (
@@ -115,9 +105,21 @@ export default function AgeVerification() {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-          <Button color="primary" variant="contained" onClick={submitDate}>
-            Enter
+          </FormControl> */}
+          <Button
+            variant="contained"
+            onClick={() => submitAge(false)}
+            className={classes.formControl}
+          >
+            Nope
+          </Button>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => submitAge(true)}
+            className={classes.formControl}
+          >
+            Yep!
           </Button>
         </div>
       </Paper>

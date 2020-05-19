@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Tabs, Tab } from '@material-ui/core';
 import DrinkIcon from '@material-ui/icons/LocalDrink';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
@@ -12,6 +13,10 @@ const useStyles = makeStyles(theme => ({
     display: 'grid',
     gridTemplateColumns: '200px 1fr',
     height: 400,
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+      height: 800,
+    },
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -26,6 +31,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function OurBeersTabs() {
   const classes = useStyles();
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -36,7 +44,8 @@ export default function OurBeersTabs() {
     <div className={classes.tabContainer}>
       <Tabs
         classes={{ indicator: classes.indicator }}
-        orientation="vertical"
+        orientation={mobile ? 'horizontal' : 'vertical'}
+        scrollButtons="auto"
         value={value}
         onChange={handleChange}
         aria-label="Our Beers"

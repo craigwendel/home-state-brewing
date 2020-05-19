@@ -43,11 +43,11 @@ export default function Map() {
           We're locacted on the corner of casa and domum
         </Typography>
         <Typography variant="h6" color="primary">
-          Home State Brewery
+          Home State Brewing
         </Typography>
         <Typography>1 Big Beer</Typography>
         <Typography className={classes.type}>Orlando, FL 34787</Typography>
-        <Typography variant="body2">beer_me@homestatebrewery.com</Typography>
+        <Typography variant="body2">beer_me@homestatebrewing.com</Typography>
         <Typography variant="body2">1-800-555-BEER</Typography>
       </Paper>
     </div>

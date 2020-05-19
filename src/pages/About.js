@@ -9,6 +9,9 @@ const useStyles = makeStyles(theme => ({
   imageText: {
     display: 'flex',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   image: {
     width: 400,
@@ -34,7 +37,7 @@ export default function About() {
       </Typography>
       <div className={classes.imageText}>
         <img className={classes.image} src={stackedLogo} alt="" />
-        <Typography>
+        <Typography className={classes.type}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
           iusto consectetur, alias voluptate dolorem similique dignissimos eaque
           assumenda culpa eum nesciunt hic accusamus fugiat harum laudantium!

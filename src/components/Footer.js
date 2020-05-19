@@ -7,28 +7,35 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import EmailIcon from '@material-ui/icons/Email';
 import Links from './Links';
-import footer from '../images/sm-label.png';
+import label from '../images/label.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   footer: {
-    position: 'relative',
-    backgroundImage: `url(${footer})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: '20rem',
+    display: 'grid',
+    gridTemplateColumns: '200px 100px 300px',
+    gridGap: '1rem',
+    alignItems: 'center',
+    height: 250,
+    width: '100%',
+    backgroundColor: '#16334B',
+    [theme.breakpoints.down('xs')]: {
+      gridTemplateColumns: '100px 1fr',
+      alignItems: 'flex-start',
+      gridGap: '0rem',
+    },
   },
-  links: {
-    position: 'absolute',
-    top: '20%',
-    right: '35%',
+  image: {
+    width: 200,
+    height: 250,
+    display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
   },
   emailSocial: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    position: 'absolute',
-    top: '30%',
-    right: '3%',
   },
   headline: {
     color: '#fff',
@@ -56,12 +63,17 @@ const useStyles = makeStyles({
   newsletter: {
     color: '#fff',
   },
-});
+}));
 
 export default function Footer() {
   const classes = useStyles();
   return (
     <div className={classes.footer}>
+      <img
+        className={classes.image}
+        src={label}
+        alt="home state brewing label"
+      />
       <div className={classes.links}>
         <Links direction="column" />
       </div>

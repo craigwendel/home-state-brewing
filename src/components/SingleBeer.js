@@ -5,9 +5,12 @@ import { Typography, Chip, Avatar } from '@material-ui/core';
 import { beers } from '../data/beers';
 import orange from '../images/orange-avatar.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   image: {
     width: 400,
@@ -22,7 +25,7 @@ const useStyles = makeStyles({
   chip: {
     margin: '0.5rem',
   },
-});
+}));
 
 export default function SingleBeer({ value }) {
   const classes = useStyles();

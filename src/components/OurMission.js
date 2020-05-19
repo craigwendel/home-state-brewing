@@ -5,7 +5,7 @@ import brewer from '../images/brewer.jpg';
 import cheers from '../images/beer-cheers.jpg';
 import fun from '../images/beer-bench-smiles.jpg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
     padding: '3rem 0rem',
   },
@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   card: {
     margin: '1rem',
@@ -27,7 +30,7 @@ const useStyles = makeStyles({
     height: 200,
     marginBottom: '1rem',
   },
-});
+}));
 
 export default function OurMission() {
   const classes = useStyles();
