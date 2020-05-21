@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, IconButton, Button, Typography } from '@material-ui/core';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import EmailIcon from '@material-ui/icons/Email';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import Links from './Links';
+import SocialLinks from './SocialLinks';
 import label from '../images/label.png';
 
 const useStyles = makeStyles(theme => ({
@@ -99,23 +97,7 @@ export default function Footer() {
             Join
           </Button>
         </div>
-        <div className={classes.social}>
-          <IconButton color="secondary">
-            <FacebookIcon />
-          </IconButton>
-          <IconButton color="secondary">
-            <TwitterIcon />
-          </IconButton>
-          <IconButton color="secondary">
-            <InstagramIcon />
-          </IconButton>
-          <IconButton color="secondary">
-            <YouTubeIcon />
-          </IconButton>
-          <IconButton color="secondary">
-            <EmailIcon />
-          </IconButton>
-        </div>
+        <SocialLinks color="secondary" />
       </div>
     </div>
   );

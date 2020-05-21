@@ -2,20 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Toolbar,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-} from '@material-ui/core';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import MenuIcon from '@material-ui/icons/Menu';
-import Zoom from '@material-ui/core/Zoom';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Links from './Links';
+import SocialLinks from './SocialLinks';
 import logo from '../images/HSB-Horizontal.png';
 import stackedLogo from '../images/HSB-Stacked.png';
 import { links } from '../data/links';
@@ -36,15 +35,18 @@ const useStyles = makeStyles(theme => ({
     zIndex: 10,
   },
   menu: {
-    display: 'none',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
+    display: 'block',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
     },
   },
   links: {
-    display: 'block',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
     },
   },
   mobileMenu: {
@@ -157,6 +159,7 @@ export default function AppHeader(props) {
         </Link>
         <div className={classes.links}>
           <Links direction="row" header />
+          <SocialLinks color="primary" />
         </div>
       </Toolbar>
       <Toolbar id="back-to-top-anchor" />
