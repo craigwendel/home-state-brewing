@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <Page>
       <Hero />
-      <OurMission />
-      <Divider className={classes.divider} />
       <OurBeers />
+      <Divider className={classes.divider} />
+      <OurMission />
       <Divider className={classes.divider} />
       <Map />
     </Page>

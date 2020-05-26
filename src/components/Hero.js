@@ -13,11 +13,11 @@ const useStyles = makeStyles(theme => ({
     height: 450,
   },
   headline: {
-    paddingTop: '7%',
+    paddingTop: '2%',
     color: '#fff',
     fontWeight: 400,
     [theme.breakpoints.down('sm')]: {
-      paddingTop: '20%',
+      paddingTop: '3%',
     },
   },
 }));

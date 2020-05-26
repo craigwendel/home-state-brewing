@@ -1,23 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import MenuIcon from '@material-ui/icons/Menu';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Links from './Links';
 import SocialLinks from './SocialLinks';
+import MobileMenu from './MobileMenu';
 import logo from '../images/HSB-Horizontal.png';
-import stackedLogo from '../images/HSB-Stacked.png';
-import { links } from '../data/links';
 
 const useStyles = makeStyles(theme => ({
   header: {
@@ -92,16 +85,6 @@ function ScrollTop(props) {
 
 export default function AppHeader(props) {
   const classes = useStyles();
-  const history = useHistory();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleMenuClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
 
   // let position = document.getElementById('root');
 
@@ -117,39 +100,7 @@ export default function AppHeader(props) {
   return (
     <>
       <Toolbar variant="dense" classes={{ root: classes.header }}>
-        <div className={classes.menu}>
-          <IconButton onClick={handleMenuClick}>
-            <MenuIcon fontSize="large" />
-          </IconButton>
-          <Drawer
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            <List className={classes.mobileMenu}>
-              <Link to="/XaeA-12">
-                <img
-                  className={classes.menuLogo}
-                  src={stackedLogo}
-                  alt="home state brewing logo"
-                />
-              </Link>
-              {links.map(link => (
-                <ListItem
-                  key={link.name}
-                  button
-                  onClick={() => {
-                    handleMenuClose();
-                    history.push(link.path);
-                  }}
-                >
-                  <ListItemText primary={link.name} />
-                </ListItem>
-              ))}
-            </List>
-          </Drawer>
-        </div>
+        <MobileMenu />
         <Link to="/XaeA-12">
           <img
             className={classes.logo}

@@ -97,7 +97,7 @@ export default function Footer() {
             Join
           </Button>
         </div>
-        <SocialLinks color="secondary" />
+        <SocialLinks color="secondary" youTube email />
       </div>
     </div>
   );

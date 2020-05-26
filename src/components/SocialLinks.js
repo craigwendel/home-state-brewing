@@ -7,7 +7,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import EmailIcon from '@material-ui/icons/Email';
 
-export default function SocialLinks({ color }) {
+export default function SocialLinks({ color, youTube, email }) {
   return (
     <div>
       <IconButton>
@@ -25,16 +25,20 @@ export default function SocialLinks({ color }) {
           <TwitterIcon color={color} />
         </Link>
       </IconButton>
-      <IconButton>
-        <Link href="https://youtube.com" target="_blank">
-          <YouTubeIcon color={color} />
-        </Link>
-      </IconButton>
-      <IconButton>
-        <Link>
-          <EmailIcon color={color} />
-        </Link>
-      </IconButton>
+      {youTube && (
+        <IconButton>
+          <Link href="https://youtube.com" target="_blank">
+            <YouTubeIcon color={color} />
+          </Link>
+        </IconButton>
+      )}
+      {email && (
+        <IconButton>
+          <Link>
+            <EmailIcon color={color} />
+          </Link>
+        </IconButton>
+      )}
     </div>
   );
 }
