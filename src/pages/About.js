@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import Page from '../components/Page';
 import PageHeader from '../components/PageHeader';
 import stackedLogo from '../images/HSB-Stacked.png';

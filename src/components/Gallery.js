@@ -25,10 +25,18 @@ const useStyles = makeStyles(theme => ({
     width: '90%',
     transform: 'translateZ(0)',
   },
+  tile: {
+    '&:hover img': {
+      opacity: 0.8,
+      cursor: 'pointer',
+    },
+    '&:hover $titleBar': {
+      display: 'flex',
+    },
+  },
   titleBar: {
-    background:
-      'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-      'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    display: 'none',
+    background: '#0000004d',
   },
   icon: {
     color: 'white',
@@ -56,7 +64,12 @@ export default function Gallery({ photos }) {
           cols={5}
         >
           {photos.map((photo, i) => (
-            <GridListTile key={photo.id} cols={i % 4 ? 2 : 1} rows={1}>
+            <GridListTile
+              className={classes.tile}
+              key={photo.id}
+              cols={i % 4 ? 2 : 1}
+              rows={1}
+            >
               <img src={photo.urls.regular} alt={photo.alt_description} />
               <GridListTileBar
                 title={photo.likes}

@@ -6,6 +6,8 @@ import OurBeersPage from './pages/OurBeersPage';
 import SingleBeerPage from './pages/SingleBeerPage';
 import AgeVerification from './components/AgeVerification';
 import OurCommunity from './pages/OurCommunity';
+import OurBrewery from './pages/OurBrewery';
+import OurTeam from './pages/OurTeam';
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
         <Route path="/XaeA-12/our-beers/:beer" component={SingleBeerPage} />
         <Route path="/XaeA-12/about-us" component={About} />
         <Route path="/XaeA-12/our-community" component={OurCommunity} />
+        <Route path="/XaeA-12/our-brewery" component={OurBrewery} />
+        <Route path="/XaeA-12/our-team" component={OurTeam} />
       </Switch>
     </Router>
   );
