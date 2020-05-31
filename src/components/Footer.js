@@ -76,7 +76,7 @@ export default function Footer() {
       </div>
       <div className={classes.emailSocial}>
         <div className={classes.headline}>
-          <Typography classes={classes.newsletter}>
+          <Typography className={classes.newsletter}>
             Sign Up below to join the HSB Family!
           </Typography>
         </div>

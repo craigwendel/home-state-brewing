@@ -50,7 +50,10 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     width: 200,
-    marginRight: '2rem',
+    [theme.breakpoints.up('sm')]: {
+      width: 200,
+      margin: '0rem 2rem 0rem 1rem',
+    },
   },
   menuLogo: {
     width: 150,
@@ -99,7 +102,11 @@ export default function AppHeader(props) {
 
   return (
     <>
-      <Toolbar variant="dense" classes={{ root: classes.header }}>
+      <Toolbar
+        disableGutters
+        variant="dense"
+        classes={{ root: classes.header }}
+      >
         <MobileMenu />
         <Link to="/XaeA-12">
           <img

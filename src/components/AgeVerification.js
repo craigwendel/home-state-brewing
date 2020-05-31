@@ -7,7 +7,6 @@ import Paper from '@material-ui/core/Paper';
 import SocialLinks from './SocialLinks';
 import cheers from '../images/sunlight-cheers.jpg';
 import stackedLogo from '../images/HSB-Stacked.png';
-// import { dates } from '../data/dates';
 
 const useStyles = makeStyles(theme => ({
   container: {

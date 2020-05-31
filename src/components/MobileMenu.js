@@ -27,32 +27,22 @@ const useStyles = makeStyles(theme => ({
   menuLogo: {
     width: 150,
   },
+  inset: {
+    paddingLeft: '1.5rem',
+  },
 }));
 
 export default function MobileMenu() {
   const classes = useStyles();
   const history = useHistory();
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleMenuClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={classes.menu}>
-      <IconButton onClick={handleMenuClick}>
+      <IconButton onClick={() => setOpen(true)}>
         <MenuIcon fontSize="large" />
       </IconButton>
-      <Drawer
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleMenuClose}
-      >
+      <Drawer keepMounted open={open} onClose={() => setOpen(false)}>
         <List className={classes.mobileMenu}>
           <Link to="/XaeA-12">
             <img
@@ -66,11 +56,15 @@ export default function MobileMenu() {
               key={link.name}
               button
               onClick={() => {
-                handleMenuClose();
+                setOpen(false);
                 history.push(link.path);
               }}
             >
-              <ListItemText primary={link.name} />
+              <ListItemText
+                classes={{ inset: classes.inset }}
+                inset={link.inset}
+                primary={link.name}
+              />
             </ListItem>
           ))}
           <SocialLinks />

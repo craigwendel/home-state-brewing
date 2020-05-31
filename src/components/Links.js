@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 import { links } from '../data/links';
 
 const useStyles = makeStyles(theme => ({
@@ -15,22 +15,69 @@ const useStyles = makeStyles(theme => ({
     margin: '0.5rem',
     fontSize: '1rem',
   }),
+  about: {
+    position: 'relative',
+    display: 'inline-block',
+    margin: '0.5rem',
+    fontSize: '1rem',
+    '&:hover $dropdown': {
+      display: 'flex',
+    },
+  },
+  dropdown: {
+    display: 'none',
+    position: 'absolute',
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    width: 140,
+    paddingTop: '0.4rem',
+  },
 }));
 
 export default function Links(props) {
   const classes = useStyles(props);
+  const dropdownLinks = links.filter(l => l.inset);
+
   return (
     <div className={classes.container}>
-      {links.map(link => (
+      <Link
+        className={classes.urlLink}
+        component={RouterLink}
+        to="/XaeA-12/our-beers"
+      >
+        Our Beers
+      </Link>
+
+      <div className={classes.about}>
         <Link
-          key={link.name}
-          className={classes.urlLink}
           component={RouterLink}
-          to={link.path}
+          to="/XaeA-12/about-us"
+          style={{ color: props.header ? '#244f70' : '#fff' }}
         >
-          {link.name}
+          About Us
         </Link>
-      ))}
+        {props.header && (
+          <div className={classes.dropdown}>
+            {dropdownLinks.map(link => (
+              <Link
+                key={link.name}
+                className={classes.urlLink}
+                component={RouterLink}
+                to={link.path}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+      <Link
+        className={classes.urlLink}
+        component={RouterLink}
+        to="/XaeA-12/contact"
+      >
+        Contact
+      </Link>
     </div>
   );
 }

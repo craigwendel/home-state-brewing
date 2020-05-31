@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Chip, Avatar } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
 import Page from '../components/Page';
 import PageHeader from '../components/PageHeader';
 import { beers } from '../data/beers';
