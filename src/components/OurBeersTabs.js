@@ -1,7 +1,9 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import useTheme from '@material-ui/core/styles/useTheme';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { Tabs, Tab } from '@material-ui/core';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import DrinkIcon from '@material-ui/icons/LocalDrink';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import PetsIcon from '@material-ui/icons/Pets';
@@ -16,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       display: 'block',
       height: 800,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      height: 500,
     },
   },
   tabs: {

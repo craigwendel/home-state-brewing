@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import Typography from '@material-ui/core/Typography';
 import brewer from '../images/brewer.jpg';
 import cheers from '../images/beer-cheers.jpg';
 import fun from '../images/beer-bench-smiles.jpg';

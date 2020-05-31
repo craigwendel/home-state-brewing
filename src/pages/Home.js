@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 import { Divider } from '@material-ui/core';
 import Page from '../components/Page';
 import Hero from '../components/Hero';
