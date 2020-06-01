@@ -4,7 +4,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import header from '../images/hsb-header.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   pageHeader: {
     position: 'relative',
     backgroundImage: `url(${header})`,
@@ -13,12 +13,15 @@ const useStyles = makeStyles({
     height: '8rem',
   },
   title: {
-    position: 'absolute',
     top: '40%',
+    position: 'absolute',
     right: '10%',
     color: '#fff',
+    [theme.breakpoints.up('sm')]: {
+      top: '30%',
+    },
   },
-});
+}));
 
 export default function PageHeader({ title }) {
   const classes = useStyles();

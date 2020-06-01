@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import Page from '../components/Page';
 import PageHeader from '../components/PageHeader';
 import { beers } from '../data/beers';

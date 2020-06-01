@@ -79,7 +79,7 @@ export default function Gallery({ photos }) {
                     aria-label={`favorites ${photo.likes}`}
                     className={classes.icon}
                   >
-                    <FavoriteBorderIcon />
+                    <FavoriteBorderIcon color="error" />
                   </IconButton>
                 }
                 actionPosition="left"
