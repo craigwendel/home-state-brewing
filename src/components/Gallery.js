@@ -6,6 +6,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles(theme => ({
   community: {
@@ -43,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Gallery({ photos }) {
+export default function Gallery({ photos, loading }) {
   const classes = useStyles();
 
   return (
@@ -57,6 +58,7 @@ export default function Gallery({ photos }) {
         #HomeIsWhereTheHopIs
       </Typography>
       <div className={classes.photos}>
+        {loading && <Skeleton variant="rect" width="90%" height={600} />}
         <GridList
           cellHeight={200}
           spacing={1}
