@@ -2,6 +2,7 @@ import hattrick from '../images/hattrick.jpg';
 import hoptopuss from '../images/hoptopuss.jpg';
 import bucklebunny from '../images/bucklebunny.jpg';
 import glorioso from '../images/glorioso.jpg';
+import pickenchickle from '../images/pickenchickle.jpg';
 
 export const beers = [
   {
@@ -16,6 +17,19 @@ export const beers = [
     abv: '7.2%',
     ibu: 70,
     slug: 'hat-trick',
+  },
+  {
+    id: 'pickenchickle',
+    name: 'Picken Chickle',
+    img: pickenchickle,
+    type: 'Foamy Fried Goodness',
+    color: 'medium',
+    availability: 'Limited Edition',
+    description:
+      "Think about the goodness of the Chick-Fil-A chicken sandwich in beer form...that's the Picken Chickle. Absolute. Perfection.",
+    abv: '10.6%',
+    ibu: 1,
+    slug: 'pickenchickle',
   },
   {
     id: 'hoptopuss',

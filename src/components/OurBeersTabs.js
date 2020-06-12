@@ -5,6 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import DrinkIcon from '@material-ui/icons/LocalDrink';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import PetsIcon from '@material-ui/icons/Pets';
 import BaseballIcon from '@material-ui/icons/SportsBaseball';
@@ -60,6 +61,11 @@ export default function OurBeersTabs() {
           classes={{ selected: classes.selected }}
           label="Hat Trick"
           icon={<DrinkIcon />}
+        />
+        <Tab
+          classes={{ selected: classes.selected }}
+          label="Picken Chickle"
+          icon={<FastfoodIcon />}
         />
         <Tab
           classes={{ selected: classes.selected }}
