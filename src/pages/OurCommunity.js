@@ -24,8 +24,6 @@ export default function OurCommunity() {
     };
   }, []);
 
-  console.log('LOADING', loading);
-
   return (
     <Page>
       <PageHeader title="Our Community" />
