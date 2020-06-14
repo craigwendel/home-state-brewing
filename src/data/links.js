@@ -5,13 +5,18 @@ export const links = [
     inset: false,
   },
   {
-    name: 'About Us',
-    path: '/XaeA-12/about-us',
+    name: 'About',
+    path: '/XaeA-12/our-story',
     inset: false,
   },
   {
     name: 'Our Brewery',
     path: '/XaeA-12/our-brewery',
+    inset: true,
+  },
+  {
+    name: 'Our Story',
+    path: '/XaeA-12/our-story',
     inset: true,
   },
   {

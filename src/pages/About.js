@@ -26,7 +26,7 @@ export default function About() {
   const classes = useStyles();
   return (
     <Page>
-      <PageHeader title="About" />
+      <PageHeader title="Our Story" />
       <Typography
         className={classes.type}
         variant="h3"

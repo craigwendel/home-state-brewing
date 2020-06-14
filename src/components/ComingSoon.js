@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -17,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     height: '100vh',
+    [theme.breakpoints.down('xs')]: {
+      height: '120vh',
+    },
   },
   flex: {
     display: 'flex',
@@ -62,10 +66,19 @@ const useStyles = makeStyles(theme => ({
   upcoming: {
     margin: '1rem 0rem',
   },
+  homeButton: {
+    position: 'absolute',
+    bottom: '5%',
+    left: '2%',
+    [theme.breakpoints.down('xs')]: {
+      bottom: '-15%',
+    },
+  },
 }));
 
 export default function ComingSoon() {
   const classes = useStyles();
+  const history = useHistory();
   const [contact, setContact] = useState({ firstName: '', email: '' });
   const [upcoming, setUpcoming] = useState(true);
   const [submitted, setSubmitted] = useState(false);
@@ -150,6 +163,14 @@ export default function ComingSoon() {
           )}
         </div>
       </div>
+      <Button
+        onClick={() => history.push('/XaeA-12')}
+        className={classes.homeButton}
+        variant="contained"
+        color="primary"
+      >
+        Home
+      </Button>
     </div>
   );
 }

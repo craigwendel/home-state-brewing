@@ -3,6 +3,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
+import ErrorPage from './ErrorPage';
 import Page from '../components/Page';
 import PageHeader from '../components/PageHeader';
 import { beers } from '../data/beers';
@@ -36,7 +37,7 @@ export default function SingleBeerPage(props) {
   const slug = props.match.params.beer;
   const beer = beers.find(beer => beer.slug === slug);
 
-  return (
+  return beer ? (
     <Page>
       <PageHeader title={beer.name} />
       <div className={classes.container} role="tabpanel">
@@ -76,5 +77,7 @@ export default function SingleBeerPage(props) {
         </div>
       </div>
     </Page>
+  ) : (
+    <ErrorPage />
   );
 }

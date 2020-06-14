@@ -51,10 +51,10 @@ export default function Links(props) {
       <div className={classes.about}>
         <Link
           component={RouterLink}
-          to="/XaeA-12/about-us"
+          to="/XaeA-12/our-story"
           style={{ color: props.header ? '#244f70' : '#fff' }}
         >
-          About Us
+          About
         </Link>
         {props.header && (
           <div className={classes.dropdown}>

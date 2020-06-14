@@ -38,7 +38,7 @@ export default function OurBeersPage() {
       <PageHeader title="Our Beers" />
       <div className={classes.allBeers}>
         {beers.map(beer => (
-          <Link to={`our-beers/${beer.slug}`}>
+          <Link key={beer.id} to={`our-beers/${beer.slug}`}>
             <div key={beer.id} className={classes.beer}>
               <img className={classes.image} src={beer.img} alt={beer.name} />
               <Typography>{beer.name}</Typography>
