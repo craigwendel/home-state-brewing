@@ -1,89 +1,119 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import useTheme from '@material-ui/core/styles/useTheme';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import DrinkIcon from '@material-ui/icons/LocalDrink';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import LocalBarIcon from '@material-ui/icons/LocalBar';
-import PetsIcon from '@material-ui/icons/Pets';
-import BaseballIcon from '@material-ui/icons/SportsBaseball';
+import Link from '@material-ui/core/Link';
+import Typography from '@material-ui/core/Typography';
 import SingleBeer from './SingleBeer';
+import { beers } from '../data/beers';
 
 const useStyles = makeStyles(theme => ({
   tabContainer: {
-    display: 'grid',
-    gridTemplateColumns: '200px 1fr',
     height: 400,
+    margin: '0rem 8rem',
     [theme.breakpoints.down('sm')]: {
-      display: 'block',
-      height: 800,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      height: 700,
+      margin: '0rem',
     },
     [theme.breakpoints.between('sm', 'md')]: {
       height: 500,
+      margin: '0rem 3rem',
     },
   },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
+  beerNav: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 80,
+    marginBottom: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      height: 125,
+    },
   },
-  indicator: {
-    width: 5,
+  allBeers: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 1fr))',
+    width: '50%',
+    [theme.breakpoints.down('xs')]: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(40px, 1fr))',
+      width: '80%',
+    },
+  },
+  img: {
+    width: 30,
+  },
+  beer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '&:hover': {
+      transform: 'translate(0px, -10px)',
+      cursor: 'pointer',
+    },
+    transition: 'transform 330ms ease-in-out',
   },
   selected: {
-    backgroundColor: '#244f7080',
+    transform: 'translate(0px, -10px)',
   },
 }));
 
 export default function OurBeersTabs() {
   const classes = useStyles();
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const mobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const [beerId, setBeerId] = React.useState('hatTrick');
 
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleChange = id => {
+    setBeerId(id);
   };
 
   return (
-    <div className={classes.tabContainer}>
-      <Tabs
-        classes={{ indicator: classes.indicator }}
-        orientation={mobile ? 'horizontal' : 'vertical'}
-        scrollButtons="auto"
-        value={value}
-        onChange={handleChange}
-        aria-label="Our Beers"
-        className={classes.tabs}
-      >
-        <Tab
-          classes={{ selected: classes.selected }}
-          label="Hat Trick"
-          icon={<DrinkIcon />}
-        />
-        <Tab
-          classes={{ selected: classes.selected }}
-          label="Picken Chickle"
-          icon={<FastfoodIcon />}
-        />
-        <Tab
-          classes={{ selected: classes.selected }}
-          label="Hoptopuss"
-          icon={<LocalBarIcon />}
-        />
-        <Tab
-          classes={{ selected: classes.selected }}
-          label="Buckle Bunny"
-          icon={<PetsIcon />}
-        />
-        <Tab
-          classes={{ selected: classes.selected }}
-          label="Glorioso"
-          icon={<BaseballIcon />}
-        />
-      </Tabs>
-      <SingleBeer value={value} />
-    </div>
+    <>
+      {mobile && (
+        <Typography variant="h2" color="primary" align="center">
+          Our Beers
+        </Typography>
+      )}
+      <div className={classes.beerNav}>
+        {!mobile && (
+          <Typography variant="h2" color="primary">
+            Our Beers
+          </Typography>
+        )}
+        <div className={classes.allBeers}>
+          {beers.map(beer => (
+            <div
+              key={beer.id}
+              className={`${classes.beer} ${
+                beer.id === beerId ? classes.selected : ''
+              }`}
+              onClick={() => handleChange(beer.id)}
+            >
+              <img
+                className={classes.img}
+                src={beer.canImg}
+                alt={`${beer.name} beer can silhoutte`}
+              />
+              {beerId === beer.id && (
+                <Typography variant="caption" align="center">
+                  {beer.name}
+                </Typography>
+              )}
+            </div>
+          ))}
+        </div>
+        <Link component={RouterLink} to="/XaeA-12/our-beers">
+          View All
+        </Link>
+      </div>
+      <div className={classes.tabContainer}>
+        <SingleBeer id={beerId} />
+      </div>
+    </>
   );
 }

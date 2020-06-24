@@ -30,41 +30,43 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SingleBeer({ value }) {
+export default function SingleBeer({ id }) {
   const classes = useStyles();
+  const beer = beers.find(beer => beer.id === id);
+
   return (
-    <div className={classes.container} role="tabpanel">
+    <div className={classes.container}>
       <div>
         <img
           className={classes.image}
-          src={beers[value].img}
-          alt={`${beers[value].name} beer`}
+          src={beer.img}
+          alt={`${beer.name} beer`}
         />
       </div>
       <div className={classes.details}>
         <Typography variant="subtitle2" color="secondary">
-          {beers[value].availability}
+          {beer.availability}
         </Typography>
         <Typography variant="h3" color="primary">
-          {beers[value].name}
+          {beer.name}
         </Typography>
         <Typography className={classes.type} color="secondary" variant="h6">
-          {beers[value].type}
+          {beer.type}
         </Typography>
-        <Typography>{beers[value].description}</Typography>
+        <Typography>{beer.description}</Typography>
         <div className={classes.type}>
           <Chip
             className={classes.chip}
             avatar={<Avatar alt="orange hop" src={orange} />}
             color="primary"
             variant="outlined"
-            label={`ABV: ${beers[value].abv}`}
+            label={`ABV: ${beer.abv}`}
           />
           <Chip
             className={classes.chip}
             avatar={<Avatar alt="orange hop" src={orange} />}
             color="primary"
-            label={`IBU: ${beers[value].ibu}`}
+            label={`IBU: ${beer.ibu}`}
           />
         </div>
       </div>
@@ -73,5 +75,5 @@ export default function SingleBeer({ value }) {
 }
 
 SingleBeer.propTypes = {
-  value: PropTypes.any.isRequired,
+  id: PropTypes.string.isRequired,
 };

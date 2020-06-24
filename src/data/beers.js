@@ -3,6 +3,10 @@ import hoptopuss from '../images/hoptopuss.jpg';
 import bucklebunny from '../images/bucklebunny.jpg';
 import glorioso from '../images/glorioso.jpg';
 import pickenchickle from '../images/pickenchickle.jpg';
+import blueCan from '../images/blue-beer-can.png';
+import orangeCan from '../images/orange-beer-can.png';
+import redCan from '../images/red-beer-can.png';
+import greenCan from '../images/green-beer-can.png';
 
 export const beers = [
   {
@@ -17,6 +21,7 @@ export const beers = [
     abv: '7.2%',
     ibu: 70,
     slug: 'hat-trick',
+    canImg: blueCan,
   },
   {
     id: 'pickenchickle',
@@ -26,10 +31,11 @@ export const beers = [
     color: 'medium',
     availability: 'Limited Edition',
     description:
-      "Think about the goodness of the Chick-Fil-A chicken sandwich in beer form...that's the Picken Chickle. Absolute. Perfection.",
+      "Think about the goodness of the Chick-fil-A chicken sandwich in beer form...that's the Picken Chickle. Absolute. Perfection.",
     abv: '10.6%',
     ibu: 1,
     slug: 'pickenchickle',
+    canImg: greenCan,
   },
   {
     id: 'hoptopuss',
@@ -43,6 +49,7 @@ export const beers = [
     abv: '5.6%',
     ibu: 10,
     slug: 'hoptopuss',
+    canImg: redCan,
   },
   {
     id: 'buckleBunny',
@@ -56,6 +63,7 @@ export const beers = [
     abv: '4.5%',
     ibu: 15,
     slug: 'buckle-bunny',
+    canImg: orangeCan,
   },
   {
     id: 'glorioso',
@@ -68,5 +76,6 @@ export const beers = [
     abv: '5.5%',
     ibu: 29,
     slug: 'glorioso',
+    canImg: blueCan,
   },
 ];

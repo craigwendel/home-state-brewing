@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   buttons: {
     margin: '1rem',
+    textAlign: 'center',
   },
 }));
 
