@@ -79,13 +79,17 @@ const useStyles = makeStyles(theme => ({
 export default function ComingSoon() {
   const classes = useStyles();
   const history = useHistory();
-  const [contact, setContact] = useState({ firstName: '', email: '' });
+  const [contact, setContact] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  });
   const [upcoming, setUpcoming] = useState(true);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = e => {
-    const { name, value } = e.target;
-    setContact({ ...contact, [name]: value });
+    const { id, value } = e.target;
+    setContact({ ...contact, [id]: value });
   };
 
   const handleSubmit = e => {
@@ -116,27 +120,49 @@ export default function ComingSoon() {
               We can't wait to see you soon!
             </Alert>
           ) : (
-            <form noValidate onSubmit={handleSubmit}>
+            // <form noValidate onSubmit={handleSubmit}>
+            <form
+              action="https://surge.us10.list-manage.com/subscribe/post"
+              method="POST"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="u" value="59a1407f9880c3c0900d846a7" />
+              <input type="hidden" name="id" value="2c29eae0ae" />
               <TextField
                 autoComplete="fname"
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
-                name="firstName"
+                name="MERGE1"
+                id="firstName"
                 value={contact.firstName}
                 onChange={handleChange}
                 label="First Name"
+              />
+              <TextField
+                autoComplete="lname"
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="MERGE2"
+                id="lastName"
+                value={contact.lastName}
+                onChange={handleChange}
+                label="Last Name"
               />
               <TextField
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
-                name="email"
+                name="MERGE0"
+                id="email"
                 value={contact.email}
                 onChange={handleChange}
                 label="Email Address"
+                type="email"
                 autoComplete="email"
               />
               <FormControlLabel

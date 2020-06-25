@@ -69,7 +69,8 @@ export default function OurBeersTabs() {
   const [beerId, setBeerId] = React.useState('hatTrick');
 
   const handleChange = id => {
-    setBeerId(id);
+    setBeerId('');
+    setTimeout(() => setBeerId(id), 50);
   };
 
   return (
