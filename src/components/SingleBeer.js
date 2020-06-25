@@ -42,7 +42,7 @@ export default function SingleBeer({ id }) {
       in={selected}
       mountOnEnter
       unmountOnExit
-      timeout={{ enter: 400 }}
+      timeout={{ enter: 200 }}
     >
       <div className={classes.container}>
         <div>
