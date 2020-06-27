@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
@@ -35,6 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Hero() {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <div className={classes.container}>
       <Typography className={classes.intro} align="center" variant="h5">
@@ -50,7 +52,7 @@ export default function Hero() {
         variant="extended"
         size="large"
         color="primary"
-        href="/XaeA-12/our-story"
+        onClick={() => history.push('/XaeA-12/our-story')}
       >
         Our Story
       </Fab>

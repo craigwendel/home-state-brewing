@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     height: '100vh',
     [theme.breakpoints.down('xs')]: {
-      height: '120vh',
+      height: '140vh',
     },
   },
   flex: {
@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
     bottom: '5%',
     left: '2%',
     [theme.breakpoints.down('xs')]: {
-      bottom: '-15%',
+      bottom: '-38%',
     },
   },
 }));
