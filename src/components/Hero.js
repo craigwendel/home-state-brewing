@@ -1,24 +1,35 @@
 import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
-import cheers from '../images/sunlight-cheers.jpg';
+import Fab from '@material-ui/core/Fab';
+import sunset from '../images/sunset.jpg';
 
 const useStyles = makeStyles(theme => ({
   container: {
     position: 'relative',
-    backgroundImage: `url(${cheers})`,
+    backgroundImage: `url(${sunset})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    opacity: '0.7',
     height: 450,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  intro: {
+    color: '#fff',
+    fontWeight: 300,
+    textShadow: `0 0 5px ${theme.palette.primary.main}`,
   },
   headline: {
-    paddingTop: '2%',
     color: '#fff',
     fontWeight: 400,
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: '3%',
-    },
+    textShadow: `0 0 5px ${theme.palette.primary.main}`,
+  },
+  subText: {
+    padding: '2% 0% 3% 0%',
+    color: '#fff',
+    textShadow: `0 0 5px ${theme.palette.primary.main}`,
   },
 }));
 
@@ -26,9 +37,23 @@ export default function Hero() {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography className={classes.headline} align="center" variant="h2">
-        Home is where our Beer is
+      <Typography className={classes.intro} align="center" variant="h5">
+        Welcome To
       </Typography>
+      <Typography className={classes.headline} align="center" variant="h1">
+        Home State Brewing
+      </Typography>
+      <Typography className={classes.subText} align="center" variant="h4">
+        ~ Home is where our Beer is ~
+      </Typography>
+      <Fab
+        variant="extended"
+        size="large"
+        color="primary"
+        href="/XaeA-12/our-story"
+      >
+        Our Story
+      </Fab>
     </div>
   );
 }

@@ -9,6 +9,9 @@ import SingleBeer from './SingleBeer';
 import { beers } from '../data/beers';
 
 const useStyles = makeStyles(theme => ({
+  container: {
+    marginTop: '1rem',
+  },
   tabContainer: {
     height: 400,
     margin: '0rem 8rem',
@@ -30,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     height: 80,
-    marginBottom: '1rem',
+    marginBottom: '2rem',
     [theme.breakpoints.down('sm')]: {
       height: 125,
     },
@@ -74,7 +77,7 @@ export default function OurBeersTabs() {
   };
 
   return (
-    <>
+    <div className={classes.container}>
       {mobile && (
         <Typography variant="h2" color="primary" align="center">
           Our Beers
@@ -115,6 +118,6 @@ export default function OurBeersTabs() {
       <div className={classes.tabContainer}>
         <SingleBeer id={beerId} />
       </div>
-    </>
+    </div>
   );
 }

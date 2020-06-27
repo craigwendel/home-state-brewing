@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Typography from '@material-ui/core/Typography';
 import Slide from '@material-ui/core/Slide';
+import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import { beers } from '../data/beers';
@@ -37,14 +38,14 @@ export default function SingleBeer({ id }) {
   const selected = Boolean(beer);
 
   return (
-    <Slide
-      direction="up"
-      in={selected}
-      mountOnEnter
-      unmountOnExit
-      timeout={{ enter: 200 }}
-    >
-      <div className={classes.container}>
+    <div className={classes.container}>
+      <Slide
+        direction="up"
+        in={selected}
+        mountOnEnter
+        unmountOnExit
+        timeout={{ enter: 200 }}
+      >
         <div>
           <img
             className={classes.image}
@@ -52,6 +53,8 @@ export default function SingleBeer({ id }) {
             alt={`${beer?.name} beer`}
           />
         </div>
+      </Slide>
+      <Fade in={selected} timeout={{ enter: 400 }}>
         <div className={classes.details}>
           <Typography variant="subtitle2" color="secondary">
             {beer?.availability}
@@ -79,8 +82,8 @@ export default function SingleBeer({ id }) {
             />
           </div>
         </div>
-      </div>
-    </Slide>
+      </Fade>
+    </div>
   );
 }
 
