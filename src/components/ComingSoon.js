@@ -67,12 +67,8 @@ const useStyles = makeStyles(theme => ({
     margin: '1rem 0rem',
   },
   homeButton: {
-    position: 'absolute',
-    bottom: '5%',
-    left: '2%',
-    [theme.breakpoints.down('xs')]: {
-      bottom: '-38%',
-    },
+    marginTop: '2rem',
+    width: 100,
   },
 }));
 
@@ -187,16 +183,16 @@ export default function ComingSoon() {
               </Button>
             </form>
           )}
+          <Button
+            onClick={() => history.push('/XaeA-12')}
+            className={classes.homeButton}
+            variant="contained"
+            color="primary"
+          >
+            Home
+          </Button>
         </div>
       </div>
-      <Button
-        onClick={() => history.push('/XaeA-12')}
-        className={classes.homeButton}
-        variant="contained"
-        color="primary"
-      >
-        Home
-      </Button>
     </div>
   );
 }
