@@ -53,6 +53,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     [theme.breakpoints.up('sm')]: {
+      width: 'auto',
       display: 'block',
     },
   },
