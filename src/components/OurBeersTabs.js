@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import useTheme from '@material-ui/core/styles/useTheme';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import SingleBeer from './SingleBeer';
@@ -11,6 +9,12 @@ import { beers } from '../data/beers';
 const useStyles = makeStyles(theme => ({
   container: {
     marginTop: '1rem',
+  },
+  heading: {
+    marginBottom: '2rem',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '0rem',
+    },
   },
   tabContainer: {
     height: 400,
@@ -67,8 +71,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function OurBeersTabs() {
   const classes = useStyles();
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down('xs'));
   const [beerId, setBeerId] = React.useState('hatTrick');
 
   const handleChange = id => {
@@ -78,17 +80,15 @@ export default function OurBeersTabs() {
 
   return (
     <div className={classes.container}>
-      {mobile && (
-        <Typography variant="h2" color="primary" align="center">
-          Our Beers
-        </Typography>
-      )}
+      <Typography
+        className={classes.heading}
+        variant="h3"
+        color="primary"
+        align="center"
+      >
+        Our Beers
+      </Typography>
       <div className={classes.beerNav}>
-        {!mobile && (
-          <Typography variant="h2" color="primary">
-            Our Beers
-          </Typography>
-        )}
         <div className={classes.allBeers}>
           {beers.map(beer => (
             <div

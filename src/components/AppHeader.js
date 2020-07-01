@@ -48,8 +48,17 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  logoBar: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
   logo: {
     width: 200,
+    marginRight: '40px',
     [theme.breakpoints.up('sm')]: {
       width: 200,
       margin: '0rem 2rem 0rem 1rem',
@@ -88,18 +97,6 @@ function ScrollTop(props) {
 
 export default function AppHeader(props) {
   const classes = useStyles();
-
-  // let position = document.getElementById('root');
-
-  // position.height = 0;
-  // window.addEventListener('scroll', function (event) {
-  //   let scroll_y = this.scrollY;
-  //   // console.log(scroll_y);
-  //   position.height = scroll_y;
-  //   return position.height;
-  // });
-  // console.log(position.height > 375);
-
   return (
     <>
       <Toolbar
@@ -108,13 +105,15 @@ export default function AppHeader(props) {
         classes={{ root: classes.header }}
       >
         <MobileMenu />
-        <Link to="/XaeA-12">
-          <img
-            className={classes.logo}
-            src={logo}
-            alt="home state brewing logo"
-          />
-        </Link>
+        <div className={classes.logoBar}>
+          <Link to="/XaeA-12">
+            <img
+              className={classes.logo}
+              src={logo}
+              alt="home state brewing logo"
+            />
+          </Link>
+        </div>
         <div className={classes.links}>
           <Links direction="row" header />
           <SocialLinks color="primary" />

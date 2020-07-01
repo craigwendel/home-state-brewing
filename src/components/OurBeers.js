@@ -4,7 +4,7 @@ import OurBeersTabs from './OurBeersTabs';
 
 const useStyles = makeStyles({
   container: {
-    padding: '3rem 0rem',
+    padding: '2rem 0rem',
   },
 });
 

@@ -36,6 +36,9 @@ export default function OurMission() {
   const classes = useStyles();
   return (
     <div className={classes.container}>
+      <Typography align="center" variant="h3" color="primary">
+        Our M.O.
+      </Typography>
       <div className={classes.mission}>
         <div className={classes.card}>
           <img className={classes.image} src={brewer} alt="" />
