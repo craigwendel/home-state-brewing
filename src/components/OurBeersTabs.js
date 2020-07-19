@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import SingleBeer from './SingleBeer';
 import { beers } from '../data/beers';
 
@@ -62,20 +64,34 @@ const useStyles = makeStyles(theme => ({
       transform: 'translate(0px, -10px)',
       cursor: 'pointer',
     },
+    '&:hover $title': {
+      display: 'block',
+    },
     transition: 'transform 330ms ease-in-out',
   },
   selected: {
     transform: 'translate(0px, -10px)',
   },
+  title: {
+    display: 'none',
+  },
+  showTitle: {
+    display: 'block',
+  },
 }));
 
 export default function OurBeersTabs() {
   const classes = useStyles();
-  const [beerId, setBeerId] = React.useState('hatTrick');
+  const [beerId, setBeerId] = useState('hatTrick');
+  const [selection, setSelection] = useState('current');
 
   const handleChange = id => {
     setBeerId('');
     setTimeout(() => setBeerId(id), 50);
+  };
+
+  const handleSelection = (_, newValue) => {
+    setSelection(newValue);
   };
 
   return (
@@ -88,6 +104,17 @@ export default function OurBeersTabs() {
       >
         Our Beers
       </Typography>
+      <Tabs
+        value={selection}
+        onChange={handleSelection}
+        indicatorColor="primary"
+        textColor="primary"
+        centered
+      >
+        <Tab label="Currently Pouring" value="current" />
+        <Tab label="On Deck" value="onDeck" />
+      </Tabs>
+
       <div className={classes.beerNav}>
         <div className={classes.allBeers}>
           {beers.map(beer => (
@@ -103,11 +130,15 @@ export default function OurBeersTabs() {
                 src={beer.canImg}
                 alt={`${beer.name} beer can silhoutte`}
               />
-              {beerId === beer.id && (
-                <Typography variant="caption" align="center">
-                  {beer.name}
-                </Typography>
-              )}
+              <Typography
+                className={`${classes.title} ${
+                  beer.id === beerId ? classes.showTitle : ''
+                }`}
+                variant="caption"
+                align="center"
+              >
+                {beer.name}
+              </Typography>
             </div>
           ))}
         </div>

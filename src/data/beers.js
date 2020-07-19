@@ -22,6 +22,7 @@ export const beers = [
     ibu: 70,
     slug: 'hat-trick',
     canImg: blueCan,
+    selection: 'current',
   },
   {
     id: 'pickenchickle',
@@ -36,6 +37,7 @@ export const beers = [
     ibu: 1,
     slug: 'pickenchickle',
     canImg: greenCan,
+    selection: 'current',
   },
   {
     id: 'hoptopuss',
@@ -50,6 +52,7 @@ export const beers = [
     ibu: 10,
     slug: 'hoptopuss',
     canImg: redCan,
+    selection: 'current',
   },
   {
     id: 'buckleBunny',
@@ -64,6 +67,7 @@ export const beers = [
     ibu: 15,
     slug: 'buckle-bunny',
     canImg: orangeCan,
+    selection: 'current',
   },
   {
     id: 'glorioso',
@@ -77,5 +81,6 @@ export const beers = [
     ibu: 29,
     slug: 'glorioso',
     canImg: blueCan,
+    selection: 'current',
   },
 ];
