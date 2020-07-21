@@ -116,7 +116,6 @@ export default function ComingSoon() {
               We can't wait to see you soon!
             </Alert>
           ) : (
-            // <form noValidate onSubmit={handleSubmit}>
             <form
               action="https://surge.us10.list-manage.com/subscribe/post"
               method="POST"

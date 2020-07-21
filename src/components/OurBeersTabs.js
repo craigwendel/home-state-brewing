@@ -12,10 +12,10 @@ const useStyles = makeStyles(theme => ({
   container: {
     marginTop: '1rem',
   },
-  heading: {
+  tabs: {
     marginBottom: '2rem',
     [theme.breakpoints.down('sm')]: {
-      marginBottom: '0rem',
+      marginBottom: '0.5rem',
     },
   },
   tabContainer: {
@@ -39,9 +39,10 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     height: 80,
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     [theme.breakpoints.down('sm')]: {
       height: 125,
+      marginBottom: '2rem',
     },
   },
   allBeers: {
@@ -74,6 +75,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     display: 'none',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   },
   showTitle: {
     display: 'block',
@@ -96,15 +100,11 @@ export default function OurBeersTabs() {
 
   return (
     <div className={classes.container}>
-      <Typography
-        className={classes.heading}
-        variant="h3"
-        color="primary"
-        align="center"
-      >
+      <Typography variant="h3" color="primary" align="center">
         Our Beers
       </Typography>
       <Tabs
+        className={classes.tabs}
         value={selection}
         onChange={handleSelection}
         indicatorColor="primary"

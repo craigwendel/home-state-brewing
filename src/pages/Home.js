@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Dialog from '@material-ui/core/Dialog';
 import Divider from '@material-ui/core/Divider';
@@ -18,6 +18,12 @@ const useStyles = makeStyles({
 });
 
 export default function Home() {
+  useEffect(() => {
+    if (window.scrollY !== 0) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const classes = useStyles();
   const [age, setAge] = useState(false);
   const over21 = localStorage.getItem('over21') || age;
